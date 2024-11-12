@@ -9,7 +9,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff; /* Texte en blanc */
-    background-color: #000000;
+    background-color: #000000e1;
     text-align: center;
 }
 
@@ -17,7 +17,7 @@ body {
 .hero {
     width: 100%;
     padding: 4rem 2rem;
-    background-image: repeating-linear-gradient(157.5deg, rgb(0,0,0) 0px, rgb(0,0,0) 20px,transparent 20px, transparent 22px),repeating-linear-gradient(90deg, rgb(0,0,0) 0px, rgb(0,0,0) 20px,transparent 20px, transparent 22px),linear-gradient(90deg, hsl(333,93%,55%),hsl(45,93%,55%),hsl(117,93%,55%),hsl(189,93%,55%),hsl(261,93%,55%));
+    background-color: rgb(221, 219, 219);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -25,16 +25,15 @@ body {
     justify-content: center;
 }
 
-
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #ffffff; /* Texte en blanc */
+    color: #000000; /* Texte noir */
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: #d4af37; /* Texte en doré */
+    color: #d4af37; /* Texte doré */
     margin-bottom: 2rem;
 }
 
@@ -78,7 +77,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 80%;
     max-width: 1000px;
     padding: 2rem 0;
     margin: 0 auto;
@@ -91,20 +90,33 @@ body {
     box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.2); /* Ombre blanche pour ressortir sur fond noir */
 }
 
-/* Feature Sections */
+/* Feature Sections with Modern Borders and Hover Effect */
 .feature-section {
     width: 100%;
-    padding: 2rem 0;
+    max-width: 800px; /* Réduction de la largeur */
+    padding: 3rem 1rem;
     display: flex;
     justify-content: center;
+    background: #1a1a1a; /* Fond sombre pour contraster avec le texte doré */
+    margin: 2rem auto; /* Centre les sections sur la page */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Ombre subtile */
+    border: 1px solid #d4af37; /* Bordure dorée */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.feature-section:hover {
+    transform: scale(1.02); /* Agrandit légèrement la section */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); /* Ombre plus prononcée */
+}
+
+/* Feature Content */
 .feature-content {
     display: flex;
     align-items: center;
-    max-width: 1000px;
     gap: 2rem;
-    width: 80%;
+    width: 100%;
+    justify-content: center;
 }
 
 .feature-content.reverse {
@@ -114,7 +126,13 @@ body {
 .feature-content video {
     width: 50%;
     border-radius: 10px;
+    border: 2px solid #d4af37; /* Bordure dorée autour des vidéos */
     box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.2); /* Ombre blanche */
+    transition: box-shadow 0.3s ease; /* Animation de l'ombre */
+}
+
+.feature-content video:hover {
+    box-shadow: 0px 6px 25px rgba(255, 255, 255, 0.4); /* Ombre plus marquée */
 }
 
 .feature-text {
@@ -125,12 +143,14 @@ body {
 .feature-text h2 {
     font-size: 2rem;
     color: #d4af37; /* Texte doré */
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Effet d'ombre sur le texte */
 }
 
 .feature-text p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #ffffff; /* Texte blanc */
+    line-height: 1.6;
 }
 
 /* Responsive Design */
@@ -167,7 +187,7 @@ body {
     }
 
     .feature-text p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -182,6 +202,14 @@ body {
 
     .small-description p {
         font-size: 0.9rem;
+    }
+
+    .feature-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .feature-text p {
+        font-size: 0.95rem;
     }
 }
 
