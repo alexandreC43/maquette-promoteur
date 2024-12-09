@@ -191,60 +191,73 @@
 
         /* Testimonials améliorés */
         .testimonials {
-            text-align: center;
-            padding: 40px 20px;
-            background: #fff;
-        }
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+}
 
-        .testimonials-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
+.testimonials-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
 
-        .testimonial {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 300px;
-            background: #fff;
-            border: 2px solid #0a84ff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    background: #fff;
+    border: 2px solid #0a84ff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .testimonial:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
 
-        .testimonial-photo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            object-fit: cover;
-            border: 3px solid #0a84ff;
-        }
+.testimonial-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #0a84ff;
+}
 
-        .testimonial-content blockquote {
-            font-style: italic;
-            color: #555;
-            margin: 0 0 15px;
-            line-height: 1.6;
-        }
+.testimonial-content blockquote {
+    font-style: italic;
+    color: #555;
+    margin: 0 0 15px;
+    line-height: 1.6;
+}
 
-        .testimonial-author {
-            font-size: 1em;
-            font-weight: bold;
-            color: #222;
-        }
-        
+.testimonial-author {
+    font-size: 0.95em;
+    font-weight: normal;
+    color: #222;
+    line-height: 1.4;
+}
+
+.testimonial-author strong {
+    font-weight: 600;
+    color: #222;
+}
+
+.testimonial-company {
+    font-style: italic;
+    color: #555;
+    display: block;
+    margin-top: 5px;
+}
+
 
         /* Footer */
         footer {
@@ -357,21 +370,30 @@
     <h2>Ils ont déjà adopté nos maquettes</h2>
     <div class="testimonials-container">
         <div class="testimonial">
-            <img src="Images/client1.jpg" alt="Photo de Marie" class="testimonial-photo">
+            <img src="Images/groupelife.jpeg" alt="Photo d'Emeline M." class="testimonial-photo">
             <div class="testimonial-content">
                 <blockquote>“Depuis que nous utilisons ces maquettes, nos prospects comprennent mieux et plus vite. On gagne un temps fou !”</blockquote>
-                <p class="testimonial-author">Marie, Directrice Commerciale</p>
+                <p class="testimonial-author">
+                    <strong>Emeline M.</strong><br>
+                    Directrice commerciale<br>
+                    <span class="testimonial-company">Groupe Life Immobilier</span>
+                </p>
             </div>
         </div>
         <div class="testimonial">
-            <img src="Images/client2.jpg" alt="Photo de Julien" class="testimonial-photo">
+            <img src="Images/julien.jpg" alt="Photo de Julien" class="testimonial-photo">
             <div class="testimonial-content">
-                <blockquote>“L’intégration a été simple, et les résultats se font sentir sur les ventes.”</blockquote>
-                <p class="testimonial-author">Julien, Responsable des Ventes</p>
+                <blockquote>“l'utilisation de la maquette simplifie notre cycle de vente, nous fait gagner du temps et permet de rassurer le client.”</blockquote>
+                <p class="testimonial-author">
+                    <strong>Julien P.</strong><br>
+                    Responsable des Ventes<br>
+                    <span class="testimonial-company">Groupe Habitat Premium</span>
+                </p>
             </div>
         </div>
     </div>
 </section>
+
 
 <section class="stats">
     <h2>Économisez sur votre budget com'</h2>
