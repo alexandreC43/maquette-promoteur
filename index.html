@@ -2,65 +2,404 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Maquettes orbitales 360° pour promouvoir efficacement vos programmes immobiliers, accélérer vos ventes et offrir une expérience immersive à vos prospects.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maquettes Orbitales 360° pour Promoteurs Immobiliers</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Maquettes Orbitales 360° - Accélérez vos ventes immobilières</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header, section, footer {
+            width: 100%;
+            max-width: 1200px;
+            padding: 60px 20px;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            color: #222;
+        }
+        header p {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin-bottom: 40px;
+            color: #444;
+        }
+        .hero-video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .cta {
+            display: inline-block;
+            background: #0a84ff;
+            color: #fff;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .cta:hover {
+            background: #006fe0;
+            transform: translateY(-2px);
+        }
+
+        /* Alternance de fonds pour les sections */
+        section:nth-of-type(even) {
+            background: #f9fafa;
+        }
+
+        /* SECTIONS */
+        section h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        section p, section ul, section li {
+            font-size: 1em;
+            max-width: 800px;
+            color: #444;
+            line-height: 1.8;
+        }
+        section p {
+            margin-bottom: 20px;
+        }
+        
+
+        /* Listes avec boutons */
+        .features-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .features-list li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            background: #f9fafa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            cursor: pointer;
+        }
+        .features-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: #eaf4ff;
+        }
+        .features-list li img {
+            width: 32px;
+            height: 32px;
+            margin-right: 15px;
+        }
+        .features-list strong {
+            color: #222;
+        }
+
+        /* Section Steps améliorée */
+        .steps-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: stretch;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            padding: 20px;
+            border: 2px solid #0a84ff;
+            border-radius: 8px;
+            background: #f9fafa;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #0a84ff;
+            margin-bottom: 10px;
+        }
+
+        .step strong {
+            font-size: 1.2em;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 1em;
+            color: #444;
+            line-height: 1.6;
+            margin-top: auto;
+        }
+
+        /* Adaptation pour les écrans mobiles */
+        @media (max-width: 600px) {
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+                max-width: 350px;
+            }
+        }
+
+        /* Testimonials améliorés */
+        .testimonials {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+        }
+
+        .testimonials-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+            background: #fff;
+            border: 2px solid #0a84ff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+            border: 3px solid #0a84ff;
+        }
+
+        .testimonial-content blockquote {
+            font-style: italic;
+            color: #555;
+            margin: 0 0 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-size: 1em;
+            font-weight: bold;
+            color: #222;
+        }
+        
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            padding-bottom: 40px;
+        }
+        footer a {
+            color: #0a84ff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        
+    </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Digitalisez la vente de vos programmes</h1>
-        <p class="hero-subtitle">Présentez vos projets immobiliers en VEFA avec un nombre illimité de perspectives.</p>
-        <button class="cta-button">En savoir plus</button>
-    </section>
 
-    
+<header>
+    <h1>Vendez plus vite vos programmes immobiliers grâce à des maquettes orbitales 360°</h1>
+    <p>Offrez à vos prospects une expérience visuelle immersive et engageante, et démarquez-vous sur un marché concurrentiel.</p>
+    <video class="hero-video" src="Videos/generale.mp4" autoplay muted loop playsinline aria-label="Démonstration de la maquette orbitale 360°"></video>
+    <a class="cta" href="https://calendar.app.google/coC14cv3a7NLqczG8">Demandez une Démo</a>
+</header>
 
-    <!-- Video Section -->
-    <section class="video-section">
-        <video autoplay loop muted playsinline>
-            <source src="Videos/generale.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas les vidéos HTML5.
-        </video>
-    </section>
+<section class="features-list">
+    <h2>Une immersion totale dans vos projets</h2>
+    <p>Nos maquettes orbitales 360° transforment vos présentations en expériences interactives, permettant à vos prospects de comprendre l’ensemble du programme en un coup d’œil.</p>
+    <ul>
+        <li>
+            <img src="Images/world.png" alt="Icône rotation 360 degrés">
+            <div><strong>Rotation 360° :</strong> Visualisation du programme sous tous les angles.</div>
+        </li>
+        <li>
+            <img src="Images/stairs.png" alt="Icône étage d'un immeuble">
+            <div><strong>Découpe par étage :</strong> Visualisation claire de chaque niveau du programme.</div>
+        </li>
+        <li>
+            <img src="https://cdn-icons-png.flaticon.com/512/446/446039.png" alt="Icône d'information">
+            <div><strong>Informations par appartement :</strong> Disponibilité, prix, superficie, plans en un clic.</div>
+        </li>
+        <li>
+            <img src="Images/monitor.png" alt="Icône d'expérience virtuelle">
+            <div><strong>Visite virtuelle Streetview :</strong> Visite des lots pour une projection immédiate.</div>
+        </li>
+        <li>
+            <img src="Images/link.png" alt="Icône d'expérience virtuelle">
+            <div><strong>Intégration ultra simple:</strong> Un simple lien à partager à vos commerciaux ou vos clients.</div>
+        </li>
+    </ul>
+</section>
 
-    <!-- Petite description -->
-    <section class="small-description">
-        <p>Découvrez les fonctionnalités et les avantages de nos maquettes orbitales 360° pour transformer l'expérience des futurs acheteurs.</p>
-    </section>
+<!-- NOUVELLE SECTION INSÉRÉE ICI -->
+<section class="pain-points">
+    <h2>Votre situation aujourd'hui :</h2>
+    <ul>
+        <li>
+            ❌ Vous dispersez votre énergie et votre temps sur plusieurs supports sans offrir une vision claire de votre projet.
+        </li>
+        <li>
+            ❌ Vous peinez à convaincre rapidement vos prospects, faute d’une expérience immersive et cohérente.
+        </li>
+        <li>
+            ❌ Vous investissez dans des perspectives, brochures ou autres outils sans vraie synergie, alourdissant votre budget.
+        </li>
+    </ul>
 
-    <!-- Feature Sections -->
-    <section class="feature-section">
-        <div class="feature-content">
-          
-            <div class="feature-text">
-                <h2>Découpe par Étage</h2>
-                <p>Permettez aux utilisateurs de naviguer facilement entre les étages et d'explorer le bâtiment étage par étage.</p>
+    <h2>Avec notre maquette orbitale 360° :</h2>
+    <ul>
+        <li>
+            ✅ Vous centralisez toutes les informations et visuels dans un seul support simple, complet et immersif.
+        </li>
+        <li>
+            ✅ Vous démarquez votre offre, facilitez la compréhension du projet et raccourcissez le temps de décision.
+        </li>
+        <li>
+            ✅ Vous optimisez vos coûts en réduisant le nombre de supports nécessaires, tout en offrant une expérience plus convaincante.
+        </li>
+    </ul>
+</section>
+
+
+<!-- FIN DE LA NOUVELLE SECTION -->
+
+<section class="steps">
+    <h2>Comment ça marche ?</h2>
+    <div class="steps-container">
+        <div class="step">
+            <div class="step-number">1</div>
+            <strong>Envoi des éléments</strong>
+            <p>Envoyez nous les plans ainsi qu'une notice descriptive du programme.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <strong>Réalisation de la maquette</strong>
+            <p>Nous créons la maquette sous 21J (maximum)</p>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <strong>Intégration de la maquette</strong>
+            <p>Vous recevez le lien de la maquette, à insérer sur votre site web ou à partager à vos commerciaux en interne.</p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>Ils ont déjà adopté nos maquettes</h2>
+    <div class="testimonials-container">
+        <div class="testimonial">
+            <img src="Images/client1.jpg" alt="Photo de Marie" class="testimonial-photo">
+            <div class="testimonial-content">
+                <blockquote>“Depuis que nous utilisons ces maquettes, nos prospects comprennent mieux et plus vite. On gagne un temps fou !”</blockquote>
+                <p class="testimonial-author">Marie, Directrice Commerciale</p>
             </div>
         </div>
-    </section>
-
-    <section class="feature-section">
-        <div class="feature-content reverse">
-           
-            <div class="feature-text">
-                <h2>Orbite 360</h2>
-                <p>Affichez des informations détaillées sur chaque appartement : typologie, superficie, prix et disponibilité.</p>
+        <div class="testimonial">
+            <img src="Images/client2.jpg" alt="Photo de Julien" class="testimonial-photo">
+            <div class="testimonial-content">
+                <blockquote>“L’intégration a été simple, et les résultats se font sentir sur les ventes.”</blockquote>
+                <p class="testimonial-author">Julien, Responsable des Ventes</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="feature-section">
-        <div class="feature-content">
-           
-            <div class="feature-text">
-                <h2>Visite Virtuelle</h2>
-                <p>Offrez une expérience immersive en 360° qui permet aux clients de visiter virtuellement chaque espace de l'appartement.</p>
-            </div>
-        </div>
-    </section>
+<section class="stats">
+    <h2>Économisez sur votre budget com'</h2>
+    <p>❌Arrêtez de disperser vos ressources entre différents supports.</p>
+    <div class="stats-content">
+        <p><b>Notre solution réunit en un seul outil :</b></p>
+        <ul>
+            <li>✅ Les perspectives 3D du projet </li>
+            <li>✅ Les données sur l’environnement </li>
+            <li>✅ Les plans d’étage clairs et complets</li>
+            <li>✅ Les visites virtuelles immersives des lots</li>
+            <li>✅ Les informations actualisées en temps réel pour chaque lot</li>           
+            
+        </ul>
+        <p class="price">À partir de seulement <strong style="font-size: 25px; color: #006fe0;"> 2500€</strong></p> 
+    </div>
+</section>
 
-    <!-- Ajoutez d'autres sections de fonctionnalité ici, en suivant la même structure -->
+
+<section class="final-cta" id="contact">
+    <h2>On en discute ?</h2>
+    <p>Réservez un appel de 20 minutes pour en savoir plus sur la façon dont nos maquettes 360 vont pouvoir booster vos ventes.</p>
+    <a class="cta" href="https://calendar.app.google/coC14cv3a7NLqczG8">Réserver un appel de 20 minutes</a>
+</section>
+
+<footer>
+    <p>© 2024 3D Expert- <a href="mentions-legales.html">Mentions légales</a> - <a href="contact.html">Contact</a></p>
+</footer>
 
 </body>
 </html>
