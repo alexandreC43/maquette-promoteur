@@ -179,6 +179,12 @@
             line-height: 1.6;
             margin-top: auto;
         }
+        .stats-content {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        }
 
         /* Adaptation pour les écrans mobiles */
         @media (max-width: 600px) {
@@ -280,31 +286,31 @@
 <body>
 
 <header>
-    <h1>Vendez plus vite vos programmes immobiliers grâce à des maquettes orbitales 360°</h1>
-    <p>Offrez à vos prospects une expérience visuelle immersive et engageante, et démarquez-vous sur un marché concurrentiel.</p>
+    <h1>Découvrez nos maquettes orbitales 360°, votre outil de vente tout en 1.</h1>
+    <p>Réduisez vos coûts marketing de 40% avec une solution interactive qui centralise perspectives, plans et supports commerciaux.</p>
     <video class="hero-video" src="Videos/generale.mp4" autoplay muted loop playsinline aria-label="Démonstration de la maquette orbitale 360°"></video>
     <a class="cta" href="https://calendar.app.google/coC14cv3a7NLqczG8">Demandez une Démo</a>
 </header>
 
 <section class="features-list">
     <h2>Une immersion totale dans vos projets</h2>
-    <p>Nos maquettes orbitales 360° transforment vos présentations en expériences interactives, permettant à vos prospects de comprendre l’ensemble du programme en un coup d’œil.</p>
+    <p>Réduisez vos coûts marketing de 40% avec une solution interactive qui centralise perspectives, plans et supports commerciaux.".</p>
     <ul>
         <li>
             <img src="Images/world.png" alt="Icône rotation 360 degrés">
-            <div><strong>Rotation 360° :</strong> Visualisation du programme sous tous les angles.</div>
+            <div><strong>Rotation 360° :</strong> Une vision complète du programme. Votre client se projette imédiatement.</div>
         </li>
         <li>
             <img src="Images/stairs.png" alt="Icône étage d'un immeuble">
-            <div><strong>Découpe par étage :</strong> Visualisation claire de chaque niveau du programme.</div>
+            <div><strong>Découpe par étage :</strong> Visualisation du batiment niveau par niveau. Votre client a une parfaite compréhension du projet.</div>
         </li>
         <li>
             <img src="https://cdn-icons-png.flaticon.com/512/446/446039.png" alt="Icône d'information">
-            <div><strong>Informations par appartement :</strong> Disponibilité, prix, superficie, plans en un clic.</div>
+            <div><strong>Informations par appartement :</strong> Disponibilité des lots, prix, plans... tout est régroupé au même endroit.</div>
         </li>
         <li>
             <img src="Images/monitor.png" alt="Icône d'expérience virtuelle">
-            <div><strong>Visite virtuelle Streetview :</strong> Visite des lots pour une projection immédiate.</div>
+            <div><strong>Visite virtuelle HD :</strong> Votre client visite son futur chez lui, comme s'il y était.</div>
         </li>
         <li>
             <img src="Images/link.png" alt="Icône d'expérience virtuelle">
@@ -318,26 +324,29 @@
     <h2>Votre situation aujourd'hui :</h2>
     <ul>
         <li>
-            ❌ Vous dispersez votre énergie et votre temps sur plusieurs supports sans offrir une vision claire de votre projet.
+            ❌ Vous perdez du temps avec des supports dispersés et incohérents.
         </li>
         <li>
-            ❌ Vous peinez à convaincre rapidement vos prospects, faute d’une expérience immersive et cohérente.
+            ❌ Vous avez du mal à convaincre rapidement vos prospects.
         </li>
         <li>
-            ❌ Vous investissez dans des perspectives, brochures ou autres outils sans vraie synergie, alourdissant votre budget.
+            ❌ Vous multipliez les prestataires et les coûts pour des résultats dispersés.
         </li>
     </ul>
-
+    
     <h2>Avec notre maquette orbitale 360° :</h2>
     <ul>
         <li>
-            ✅ Vous centralisez toutes les informations et visuels dans un seul support simple, complet et immersif.
+            ✅ Un seul interlocuteur qui gère toute la communication du programme de A à Z.
         </li>
         <li>
-            ✅ Vous démarquez votre offre, facilitez la compréhension du projet et raccourcissez le temps de décision.
+            ✅ Un seul support, simple et immersif, pour centraliser toutes vos informations.
         </li>
         <li>
-            ✅ Vous optimisez vos coûts en réduisant le nombre de supports nécessaires, tout en offrant une expérience plus convaincante.
+            ✅ Un projet plus clair qui accélère la décision de vos prospects.
+        </li>
+        <li>
+            ✅ Moins de prestataires, moins de coûts, plus d’efficacité.
         </li>
     </ul>
 </section>
@@ -396,19 +405,25 @@
 
 
 <section class="stats">
-    <h2>Économisez sur votre budget com'</h2>
+    <h2>Économisez en moyenne 40% sur votre budget marketing</h2>
     <p>❌Arrêtez de disperser vos ressources entre différents supports.</p>
     <div class="stats-content">
         <p><b>Notre solution réunit en un seul outil :</b></p>
         <ul>
-            <li>✅ Les perspectives 3D du projet </li>
-            <li>✅ Les données sur l’environnement </li>
-            <li>✅ Les plans d’étage clairs et complets</li>
+            <li>✅ Les informations actualisées en temps réel pour chaque lot</li>  
             <li>✅ Les visites virtuelles immersives des lots</li>
-            <li>✅ Les informations actualisées en temps réel pour chaque lot</li>           
+            <li>✅ Les plans d’étage clairs et complets</li>
+            <li>✅ Les données sur l’environnement </li>
+            <li>✅ Les perspectives 3D du projet </li>
+            
+            
+            
+                     
             
         </ul>
         <p class="price">À partir de seulement <strong style="font-size: 25px; color: #006fe0;"> 2500€</strong></p> 
+
+       
     </div>
 </section>
 
@@ -419,6 +434,13 @@
     <a class="cta" href="https://calendar.app.google/coC14cv3a7NLqczG8">Réserver un appel de 20 minutes</a>
 </section>
 
+<section class="simulateur">
+    <div>
+        <h2 style="text-align: center;">Pas convaincu ?</h2>
+        <h3 style="border: 1px black solid; border-radius: 4px; padding: 5px;"><a href="simulateur.html" target="_blank">Je simule combien je vais économiser en 2min chrono</a></h3>
+    </div>
+
+</section>
 <footer>
     <p>© 2024 3D Expert- <a href="mentions-legales.html">Mentions légales</a> - <a href="contact.html">Contact</a></p>
 </footer>
