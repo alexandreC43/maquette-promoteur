@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulateur d'économies budget marketing promoteur</title>
+    <title>Simulation de budget marketing</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -57,85 +57,54 @@
 </head>
 <body>
     <div class="container">
-        <h1>Simulateur d'économies budget marketing promoteur</h1>
-
+        <h1>Simulation de budget marketing</h1>
         <label for="numLogements">Nombre de logements dans le programme à commercialiser :</label>
-        <input type="number" id="numLogements" placeholder="Exemple : 30">
-
-        <label for="budget3D">Budget estimatif des perspectives / vidéos (€) :</label>
-        <input type="number" id="budget3D" placeholder="Exemple : 10000">
-
-        <label for="budgetPlaquettes">Budget estimatif des plaquettes commerciales (€) :</label>
-        <input type="number" id="budgetPlaquettes" placeholder="Exemple : 5000">
-
-        <label for="budgetVisites">Budget estimatif des visites virtuelles (€) :</label>
-        <input type="number" id="budgetVisites" placeholder="Exemple : 3000">
-
-        <label for="budgetAutres">Budget estimatif des autres supports marketing (€) :</label>
-        <input type="number" id="budgetAutres" placeholder="Exemple : 2000">
-
-        <button onclick="calculerEconomie()">Calculer</button>
-
+        <input type="number" id="numLogements" min="1" placeholder="Entrez le nombre de logements">
+        
+        <label for="budgetHabituel">Budget habituel pour les supports marketing (perspectives, plans 3D, visites virtuelles, brochures) (€) :</label>
+        <input type="number" id="budgetHabituel" min="0" placeholder="Entrez votre budget habituel">
+        
+        <button onclick="simulerEconomies()">Simuler mes économies de budget</button>
+        
         <div id="results" class="results" style="display: none;">
-            <p><strong>Budget marketing actuel :</strong> <span id="budgetActuel"></span> €</p>
-            <p><strong>Budget marketing avec maquette 360 tout en un :</strong> <span id="budgetMaquette"></span> €</p>
-            <p><strong>Économie réalisée :</strong> <span id="economie"></span> € (<span id="economiePourcent"></span>)</p>
+            <p>Votre budget habituel : <span id="budgetActuel"></span> €</p>
+            <p>Tarif de la maquette : <span id="tarifMaquette"></span> €</p>
+            <p>Économie réalisée : <span id="economies"></span> €</p>
+            <p>Économie en pourcentage : <span id="economiesPourcentage"></span> %</p>
         </div>
     </div>
-<!-- Section des boutons à ajouter à la fin -->
-<div style="text-align: center; margin-top: 20px;">
 
-  
-  <!-- Bouton Maquette 360 Orbitale (plus discret) -->
-  <a href="https://maquette.3dexpert.studio/" target="_blank" style="text-decoration: none; margin: 10px;">
-    <button style="padding: 8px 15px; background-color: #f1f1f1; color: #333; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; cursor: pointer;">
-      Maquette 360 Orbitale
-    </button>
-  </a>
-  
-  <!-- Bouton Demander une Démo (plus discret) -->
-  <a href="https://calendar.app.google/coC14cv3a7NLqczG8" target="_blank" style="text-decoration: none; margin: 10px;">
-    <button style="padding: 8px 15px; background-color: #f1f1f1; color: #333; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; cursor: pointer;">
-      Demander une Démo
-    </button>
-  </a>
-</div>
     <script>
-        function calculerEconomie() {
-            const numLogements = parseInt(document.getElementById('numLogements').value) || 0;
-            const budget3D = parseFloat(document.getElementById('budget3D').value) || 0;
-            const budgetPlaquettes = parseFloat(document.getElementById('budgetPlaquettes').value) || 0;
-            const budgetVisites = parseFloat(document.getElementById('budgetVisites').value) || 0;
-            const budgetAutres = parseFloat(document.getElementById('budgetAutres').value) || 0;
-
-            const budgetActuel = budget3D + budgetPlaquettes + budgetVisites + budgetAutres;
-
-            let budgetMaquette = 0;
-            if (numLogements <= 30) {
-                budgetMaquette = 2900;
-            } else if (numLogements <= 40) {
-                budgetMaquette = 3900;
-            } else if (numLogements <= 50) {
-                budgetMaquette = 4900;
+        function calculerTarifMaquette(nbLogements) {
+            const tarifDeBase = 2900;
+            if (nbLogements <= 20) {
+                return tarifDeBase;
             } else {
-                budgetMaquette = 4900 + ((Math.ceil((numLogements - 50) / 10)) * 1000);
+                const supplement = (nbLogements - 20) * 60;
+                return tarifDeBase + supplement;
+            }
+        }
+
+        function simulerEconomies() {
+            const nbLogements = parseInt(document.getElementById('numLogements').value);
+            const budgetHabituel = parseFloat(document.getElementById('budgetHabituel').value);
+
+            if (isNaN(nbLogements) || isNaN(budgetHabituel)) {
+                alert('Veuillez remplir tous les champs avec des valeurs valides.');
+                return;
             }
 
-            const economie = budgetActuel - budgetMaquette;
-            const economiePourcent = ((economie / budgetActuel) * 100).toFixed(2);
+            const tarifMaquette = calculerTarifMaquette(nbLogements);
+            const economie = budgetHabituel - tarifMaquette;
+            const economiePourcentage = ((economie / budgetHabituel) * 100).toFixed(2);
 
-            document.getElementById('budgetActuel').textContent = budgetActuel.toFixed(2);
-            document.getElementById('budgetMaquette').textContent = budgetMaquette.toFixed(2);
-            document.getElementById('economie').textContent = economie.toFixed(2);
-            document.getElementById('economiePourcent').textContent = economiePourcent + '%';
+            // Affichage des résultats
+            document.getElementById('budgetActuel').textContent = budgetHabituel.toFixed(2);
+            document.getElementById('tarifMaquette').textContent = tarifMaquette.toFixed(2);
+            document.getElementById('economies').textContent = economie.toFixed(2);
+            document.getElementById('economiesPourcentage').textContent = economiePourcentage;
 
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.style.display = 'block';
-
-            // Highlight économie in color if positive
-            if (economie > 0) {
-                document.getElementById('economie').classList.add('highlight');
-            }
+            document.getElementById('results').style.display = 'block';
         }
     </script>
 </body>
